@@ -24,7 +24,7 @@ function ContactForm() {
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+      <h2 className="text-6xl font-bold mb-4 text-center text-black">Contact</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex gap-4">
           <input
@@ -66,7 +66,7 @@ function ContactForm() {
         ></textarea>
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
+          className="bg-blue-600 text-black p-2 rounded hover:bg-blue-700 transition"
         >
           Submit
         </button>

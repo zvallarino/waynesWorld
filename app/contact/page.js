@@ -4,11 +4,13 @@ import Toolbar from "@/components/toolbar/Toolbar";
 
 export default function Contact() {
   return (
-    <div className="flex w-screen h-screen bg-green-500 flex-col px-[5%]">
-      <div className="flex bg-amber-300 h-1/5" >
-      <Toolbar />
-      </div>
-      <div className="flex bg-red-300 h-4/5" ><ContactForm /></div>
+    <div className="flex min-h-screen w-full flex-col bg-green-500 px-4 sm:px-6 md:px-[5%]">
+      <header className="w-full py-2">
+        <Toolbar />
+      </header>
+      <main className="flex-1 w-full ">
+        <ContactForm />
+      </main>
     </div>
-  )
+  );
 }
