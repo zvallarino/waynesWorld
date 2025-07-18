@@ -1,5 +1,29 @@
 [
   {
+    "name": "shoesstore",        
+    "title": "Crowd in front of Store",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "20 x 36",
+    "year": 2024
+  },
+  {
+    "name": "vanboy",        
+    "title": "Sitting on a Van",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "20 x 36",
+    "year": 2022
+  },
+  {
+    "name": "oceanwaves",        
+    "title": "Ocean Waves",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "20 x 36",
+    "year": 2024
+  },
+  {
     "name": "country",        
     "title": "Untitled",
     "type": "Oil on Canvas",
@@ -303,7 +327,4 @@
     "year": ""
   }
  
-
-
-  
 ]

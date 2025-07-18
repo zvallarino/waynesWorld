@@ -20,12 +20,10 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // You can add your form submission logic here (e.g., sending to an API)
     alert('Thank you for your message!');
     setFormData({ firstName: '', lastName: '', email: '', message: '' });
   };
 
-  // A helper component for required fields to keep the code clean
   const renderLabel = (label) => (
     <label className="block text-sm font-medium text-gray-700 mb-1">
       {label} <span className="text-red-500">*</span>
@@ -33,23 +31,32 @@ function ContactForm() {
   );
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-4">
-      {/* Background Image */}
+    // MODIFIED: This line now handles responsive vertical alignment and padding.
+    <div className="relative min-h-dvh w-full flex items-start md:items-center justify-center p-4 pt-16 md:pt-4">
+      {/* Mobile Background Image (Visible on mobile, hidden on desktop) */}
+      <Image
+        src="/images/categories/Sceneries/oceanwaves.jpg"
+        alt="Ocean waves background"
+        fill
+        className="object-cover -z-10 block md:hidden" 
+      />
+      {/* Desktop Background Image (Hidden on mobile, visible on desktop) */}
       <Image
         src="/images/categories/stills2.jpg"
         alt="Abstract background"
         fill
-        className="object-cover -z-10" // Pushes the image behind the content
+        className="object-cover -z-10 hidden md:block"
       />
       
       {/* Form Container */}
-      <div className="w-full max-w-2xl p-8 space-y-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-2xl">
-        <h2 className="text-7xl md:text-8xl font-thin tracking-tight mb-6 text-center text-black">
+      <div className="w-full max-w-2xl p-6 md:p-8 space-y-4 md:space-y-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-2xl">
+        <h2 className="text-6xl md:text-8xl font-thin tracking-tight mb-4 text-center text-black">
           Contact
         </h2>
         
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* First Name */}
             <div>
               {renderLabel('First Name')}
@@ -98,7 +105,7 @@ function ContactForm() {
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows="4"
               value={formData.message}
               onChange={handleChange}
               className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"

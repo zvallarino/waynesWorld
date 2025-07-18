@@ -5,9 +5,8 @@ import artworks from '@/data/artwork.json';
 import ArtworkCard from './ArtworkCard';
 import ArtworkModal from './ArtworkModal';
 
-function PortfolioPage() {
+function PortfolioPage({selectedCategory, setSelectedCategory}) {
   // State to track the currently selected category (e.g., "Sceneries")
-  const [selectedCategory, setSelectedCategory] = useState(null);
   
   // State to track the artwork selected for the modal view
   const [selectedArtwork, setSelectedArtwork] = useState(null);

@@ -17,10 +17,10 @@ function EventsPage() {
     },
     // Past Events (4)
     {
-        date: '2025-07-15',
-        location: 'Boston, MA',
-        time: '7:00 PM',
-        description: 'A special charity auction and gala where several exclusive prints were sold to support local arts education programs for underprivileged youth.',
+      date: '2025-07-15',
+      location: 'Boston, MA',
+      time: '7:00 PM',
+      description: 'A special charity auction and gala where several exclusive prints were sold to support local arts education programs for underprivileged youth.',
     },
     {
       date: '2024-12-05',
@@ -29,10 +29,10 @@ function EventsPage() {
       description: 'An intimate evening artist talk discussing the inspiration behind the "Urban Dreams" series, followed by a live painting session for all attendees.',
     },
     {
-        date: '2024-09-22',
-        location: 'Virtual Event',
-        time: '3:00 PM',
-        description: 'A live-streamed studio tour that gave viewers a behind-the-scenes look at the artistic process, current works-in-progress, and favorite tools.',
+      date: '2024-09-22',
+      location: 'Virtual Event',
+      time: '3:00 PM',
+      description: 'A live-streamed studio tour that gave viewers a behind-the-scenes look at the artistic process, current works-in-progress, and favorite tools.',
     },
     {
       date: '2023-11-11',
@@ -55,15 +55,13 @@ function EventsPage() {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const renderEventBox = (title, list) => (
-    <div className="bg-white p-6 mb-6">
-      {/* MODIFIED: Title is now black with a bottom border */}
+    <div className="bg-white p-6 shadow-lg rounded-md">
       <h3 className="text-xl font-bold mb-4 border-b border-gray-300 pb-2 text-black">{title}</h3>
       <div className="flex flex-col">
         {list.length === 0 ? (
           <p className="text-gray-500">No events.</p>
         ) : (
           list.map((event, idx) => (
-            // MODIFIED: Replaced full border with a bottom border on each item
             <div key={idx} className="border-b border-gray-200 py-4 last:border-b-0">
               <div className="font-semibold text-gray-800">{event.date} – {event.time}</div>
               <div className="italic text-sm text-gray-600">{event.location}</div>
@@ -76,11 +74,19 @@ function EventsPage() {
   );
 
   return (
-    // MODIFIED: Container is wider now
-    <div className="max-w-3xl mx-auto p-6 rounded-lg  w-full  flex mt-20 ">
-      <div>{renderEventBox('Upcoming Events', upcomingEvents)}</div>
-         <div className='flex w-1/3 '> </div>
-     <div> {renderEventBox('Past Events', pastEvents)}</div>
+    // MODIFIED: This container is now a responsive flexbox.
+    // It's a column on mobile and becomes a row on medium screens (md) and up.
+    <div className="max-w-6xl mx-auto p-4 w-full flex flex-col md:flex-row gap-8 mt-10 md:mt-20">
+      
+      {/* Each child takes up the full width on mobile and half the width on desktop */}
+      <div className="w-full md:w-1/2">
+        {renderEventBox('Upcoming Events', upcomingEvents)}
+      </div>
+      
+      <div className="w-full md:w-1/2">
+        {renderEventBox('Past Events', pastEvents)}
+      </div>
+
     </div>
   );
 }

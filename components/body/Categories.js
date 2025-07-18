@@ -1,34 +1,38 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+// components/Categories.js
+import React from 'react';
+import Image from 'next/image';
 
-function Categories() {
-  const listOfCategories = ["Sceneries", "Scenarios", "Stills", "Sketches"]
+// It now accepts a prop, which is the function from the parent page
+function Categories({ onCategorySelect }) {
+  const listOfCategories = ["Sceneries", "Scenarios", "Stills", "Sketches"];
 
   return (
-    <div className="flex w-full bg-blue-400 justify-evenly flex-wrap p-2 ">
+    <div className="flex w-full bg-white justify-center flex-wrap gap-8 p-10 border-t">
       {listOfCategories.map((category) => {
-        const route = category.toLowerCase()
-        const imagePath = `/images/categories/${route}.jpg`
+        // We can keep the image path logic
+        const imagePath = `/images/categories/${category.toLowerCase()}.jpg`;
 
         return (
-          <div key={route} className="text-center w-[300px]">
-            <Link href={`/${route}`}>
-              <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden hover:opacity-80 transition duration-200">
-                <Image 
-                  src={imagePath}
-                  alt={category}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </Link>
-            <h2 className="mt-2 text-xl font-semibold">{category}</h2>
+          // MODIFIED: This is now a button or clickable div, not a Link
+          <div 
+            key={category} 
+            className="text-center w-[300px] cursor-pointer group"
+            onClick={() => onCategorySelect(category)}
+          >
+            <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden shadow-lg">
+              <Image 
+                src={imagePath}
+                alt={category}
+                fill
+                className="object-cover group-hover:scale-110 group-hover:opacity-90 transition-all duration-300"
+              />
+            </div>
+            <h2 className="mt-2 text-xl font-semibold text-gray-800">{category}</h2>
           </div>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

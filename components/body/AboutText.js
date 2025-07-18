@@ -32,7 +32,6 @@ function AboutText() {
         "Graphic Art Society award for achievement"
     ];
 
-    // MODIFICATION: Updated renderList to add an underline and adjust styles
     const renderList = (title, list) => (
         <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-3 pb-2 border-b border-gray-300">
@@ -49,32 +48,29 @@ function AboutText() {
     );
 
     return (
-        // Added a max-width container for better layout on large screens
-        <div className='flex flex-col w-full max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8'>
+        <div className='flex flex-col w-full max-w-7xl mx-auto py-8 md:py-12 px-4 sm:px-6 lg:px-8'>
 
             {/* --- Top Section: Bio + Image --- */}
-            {/* MODIFICATION: Made this section responsive (stacks on mobile) and adjusted widths/gaps */}
-            <div className='flex flex-col md:flex-row w-full gap-12 items-center'>
+            {/* MODIFIED: Reduced gap on mobile for tighter stacking */}
+            <div className='flex flex-col md:flex-row w-full gap-8 md:gap-12 items-center'>
                 
                 {/* Text Container */}
                 <div className='w-full md:w-2/3'>
                     <div className='flex flex-col gap-6 text-left'>
-                        {/* MODIFICATION: Normalized font sizes */}
-                        <p className='text-4xl font-serif text-gray-900'>Wayne Bowen is an artist who, since the eighties, has studied to capture life in the form of realism.</p>
+                        {/* MODIFIED: Made the large text responsive to prevent cramping on mobile */}
+                        <p className='text-3xl md:text-4xl font-serif text-gray-900'>Wayne Bowen is an artist who, since the eighties, has studied to capture life in the form of realism.</p>
                         <p className='text-lg text-gray-600 leading-relaxed'>Much of his work contrasts the stylistic and conceptual art forms of the eighties. His form of realism exemplifies itself in oils, watercolors, pen and ink, and pastels. While the artist appears to employ a basic academic approach, upon closer observation the colors and detail captivate and tell a story of their own. His colors are seductively light and soft, demanding attention and opinion. His meticulous approach to detail cannot be overlooked. It creates the backdrop for his life-like expressions.</p>
-                        <p className='text-lg text-gray-600 leading-relaxed'>Mr. Bowens work is backed by organizations such as The National Foundation for the Advancement in the Arts and the School of Visual Arts Alumni Society. Many investors consider his work uniquely collectible.</p>
+                       <p className='text-lg text-gray-600 leading-relaxed'>Mr. Bowen&apos;s work is backed by organizations such as The National Foundation for the Advancement in the Arts and the School of Visual Arts Alumni Society. Many investors consider his work uniquely collectible.</p>
                     </div>
                 </div>
 
                 {/* Image Container */}
-                {/* MODIFICATION: Changed width from w-1/5 to md:w-1/3 to make image ~2x bigger on desktop */}
                 <div className='flex-shrink-0 w-full md:w-1/3 mt-8 md:mt-0'>
                     <div className='relative aspect-[4/5] shadow-xl'>
                         <Image
-                            src={`/images/categories/stills.jpg`} // Using a real image path for example
+                            src={`/images/categories/stills.jpg`}
                             alt={`Wayne Bowen Artwork`}
                             fill
-                            // MODIFICATION: Corrected `object-fit` to `object-cover`
                             className="object-cover rounded-md"
                         />
                     </div>
@@ -82,8 +78,8 @@ function AboutText() {
             </div>
             
             {/* --- Bottom Section: Lists --- */}
-            <div className='flex flex-col md:flex-row w-full text-black py-16 md:py-24 gap-8 md:gap-16'>
-                {/* MODIFICATION: Normalized font sizes */}
+            {/* MODIFIED: Reduced vertical padding on mobile */}
+            <div className='flex flex-col md:flex-row w-full text-black py-12 md:py-20 gap-8 md:gap-16'>
                 <div className='w-full md:w-1/2 text-lg'>
                     {renderList("Studied With", studiedwith)}  
                     {renderList("Education", education)}
