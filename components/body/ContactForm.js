@@ -1,3 +1,4 @@
+
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -31,16 +32,15 @@ function ContactForm() {
   );
 
   return (
-    // MODIFIED: This line now handles responsive vertical alignment and padding.
+    // REVERTED: Removed `overflow-x-hidden`. No changes needed here.
     <div className="relative min-h-dvh w-full flex items-start md:items-center justify-center p-4 pt-16 md:pt-4">
-      {/* Mobile Background Image (Visible on mobile, hidden on desktop) */}
+      {/* Background Images */}
       <Image
         src="/images/categories/Sceneries/oceanwaves.jpg"
         alt="Ocean waves background"
         fill
         className="object-cover -z-10 block md:hidden" 
       />
-      {/* Desktop Background Image (Hidden on mobile, visible on desktop) */}
       <Image
         src="/images/categories/stills2.jpg"
         alt="Abstract background"
@@ -57,7 +57,6 @@ function ContactForm() {
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* First Name */}
             <div>
               {renderLabel('First Name')}
               <input
@@ -70,7 +69,6 @@ function ContactForm() {
                 required
               />
             </div>
-            {/* Last Name */}
             <div>
               {renderLabel('Last Name')}
               <input
@@ -84,8 +82,6 @@ function ContactForm() {
               />
             </div>
           </div>
-
-          {/* Email */}
           <div>
             {renderLabel('Email')}
             <input
@@ -98,8 +94,6 @@ function ContactForm() {
               required
             />
           </div>
-
-          {/* Message */}
           <div>
             {renderLabel('Message')}
             <textarea
@@ -112,8 +106,6 @@ function ContactForm() {
               required
             ></textarea>
           </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-gray-800 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-900 transition-colors duration-300"

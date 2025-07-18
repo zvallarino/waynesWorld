@@ -15,7 +15,7 @@ export default function ArtworkGrid({ category, allCategories, onCategorySelect,
   return (
     <div className="min-h-full w-full bg-white py-12">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-center text-6xl font-serif font-thin text-gray-800 mb-12">
+        <h1 className="text-center text-4xl md:text-6xl font-serif font-thin text-gray-800 mb-12">
           {category}
         </h1>
 
@@ -31,30 +31,32 @@ export default function ArtworkGrid({ category, allCategories, onCategorySelect,
 
         {/* Bottom Navigation */}
         <div className="flex justify-between items-center mt-20 text-gray-700 font-serif">
+          {/* Previous Category Button */}
           {currentCategoryIndex > 0 ? (
             <button 
               onClick={() => onCategorySelect(allCategories[currentCategoryIndex - 1])}
-              className="text-4xl hover:text-red-600 transition-colors"
+              className="text-4xl md:text-4xl hover:text-red-600 transition-colors"
             >
-              &larr; {allCategories[currentCategoryIndex - 1]}
+              &larr; <span className="hidden md:inline">{allCategories[currentCategoryIndex - 1]}</span>
             </button>
-          ) : <div />}
+          ) : <div />} {/* Empty div to maintain spacing */}
           
+          {/* Next Category Button */}
           {currentCategoryIndex < allCategories.length - 1 ? (
             <button 
               onClick={() => onCategorySelect(allCategories[currentCategoryIndex + 1])}
-              className="text-4xl hover:text-red-600 transition-colors"
+              className="text-4xl md:text-4xl hover:text-red-600 transition-colors"
             >
-              {allCategories[currentCategoryIndex + 1]} &rarr;
+              <span className="hidden md:inline">{allCategories[currentCategoryIndex + 1]}</span> &rarr;
             </button>
-          ) : <div />}
+          ) : <div />} {/* Empty div to maintain spacing */}
         </div>
 
         {/* Home button to go back to category list */}
         <div className="text-center mt-12">
           <button 
             onClick={onBack}
-            className="text-4xl text-gray-600 hover:text-red-600 font-serif transition-colors"
+            className="text-2xl md:text-4xl text-gray-600 hover:text-red-600 font-serif transition-colors"
           >
             Back to Categories
           </button>
