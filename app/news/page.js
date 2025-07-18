@@ -5,11 +5,11 @@ import Toolbar from "@/components/toolbar/Toolbar";
 
 export default function News() {
   return (
-    <div className="flex w-screen h-screen bg-green-500 flex-col px-[5%]">
-      <div className="flex bg-amber-300 h-1/5" >
+    <div className="flex w-screen h-screen  flex-col px-[15%]">
+      <div className="flex  h-1/6" >
       <Toolbar />
       </div>
-      <div className="flex bg-red-300 h-4/5" ><EventsPage /></div>
+      <div className="flex  h-5/6" ><EventsPage /></div>
     </div>
   )
 }

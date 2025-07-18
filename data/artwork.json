@@ -1,0 +1,330 @@
+[
+  {
+    "name": "shoesstore",        
+    "title": "Crowd in front of Store",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "20 x 36",
+    "year": 2024
+  },
+  {
+    "name": "vanboy",        
+    "title": "Sitting on a Van",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "20 x 36",
+    "year": 2022
+  },
+  {
+    "name": "oceanwaves",        
+    "title": "Ocean Waves",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "20 x 36",
+    "year": 2024
+  },
+  {
+    "name": "country",        
+    "title": "Untitled",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "11 X 14",
+    "year": 2009
+  },
+  {
+    "name": "bridge",
+    "title": "Triborough Bridge",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "20 x 36",
+    "year": 2002
+  },
+  {
+    "name": "water",
+    "title": "Winter Path",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "",
+    "year": 2006
+  },
+  {
+    "name": "morocco",
+    "title": "Winter Path",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "16 x 28",
+    "year": 1989
+  },
+  {
+    "name": "park",
+    "title": "Stuyvesant Square Park",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "16 x 28",
+    "year": 2005
+  },
+  {
+    "name": "subway",
+    "title": "The Subway Station (Broadway & 215th Street)",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "16 x 28",
+    "year": 1988
+  }
+  ,
+  {
+    "name": "subway2",
+    "title": "Bruckner Blvd & 137th Street",
+    "type": "Oil on Canvas",
+    "category": "Sceneries",
+    "size": "16 x 28",
+    "year": 2002
+  },
+  
+  {
+    "name": "school",
+    "title": "School Break",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "30 X 40",
+    "year": 1998
+  }
+  ,
+  {
+    "name": "stoop",
+    "title": "On The Stoop",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "16 x 18",
+    "year": 2003
+  },
+  {
+    "name": "bus",
+    "title": "Waiting On The Bus",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "16 x 20",
+    "year": 2009
+  }
+  ,
+  {
+    "name": "boy",
+    "title": "Boy With Basket Ball",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "46 X 58",
+    "year": 1990
+  },
+  {
+    "name": "stare",
+    "title": "The Stare",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "30 X 40",
+    "year": ""
+  }
+  ,
+  {
+    "name": "union",
+    "title": "Union Square and 16th Street",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "11 x 14",
+    "year": 2006
+  }
+  ,
+  {
+    "name": "sarah",
+    "title": "Sarah",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "15 x 36",
+    "year": ""
+  },
+  {
+    "name": "yellow",
+    "title": "Yellow Couch",
+    "type": "Oil on Canvas",
+    "category": "Scenarios",
+    "size": "36 x 48",
+    "year": 2006
+  },
+  {
+    "name": "dykeman",
+    "title": "Dykeman and 200th Street",
+    "type": "Oil on Masonite",
+    "category": "Scenarios",
+    "size": "15 x 18",
+    "year": ""
+  },
+  {
+    "name": "harlem",
+    "title": "Man In Harlem",
+    "type": "Oil on Masonite",
+    "category": "Scenarios",
+    "size": "11 x 26",
+    "year": ""
+  },
+  {
+    "name": "relics7",
+    "title": "Jacket and Saddle",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "22 x 28",
+    "year": 2006
+  },
+  {
+    "name": "relics6",
+    "title": "Red Latern",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "36 x 36",
+    "year": 1996 
+  }
+  ,
+  {
+    "name": "relics5",
+    "title": "Oriental vase",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "32 x 32",
+    "year": 2007 
+  }
+  ,
+  {
+    "name": "relics4",
+    "title": "Antique Fan and Chotoye",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "24 x 30",
+    "year": 1997 
+  },
+  
+  {
+    "name": "relics3",
+    "title": "Tools of the Trade",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "19 x 24",
+    "year": 1989 
+  }
+  ,
+  {
+    "name": "relics2",
+    "title": "Oriental Things",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "24 x 36",
+    "year": 1998 
+  }
+  ,
+
+  {
+    "name": "relics",
+    "title": "Oriental rug, canvas and gourds",
+    "type": "Oil on Canvas",
+    "category": "Stills",
+    "size": "22 x 36",
+    "year": 2002 
+  }
+   ,
+  {
+    "name": "sketch1",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+   ,
+  {
+    "name": "sketch2",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch3",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch4",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch5",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch6",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch7",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch8",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch9",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "sketch10",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ ,
+  {
+    "name": "selfportait",
+    "title": "",
+    "type": "",
+    "category": "Sketches",
+    "size": "",
+    "year": ""
+  }
+ 
+]
