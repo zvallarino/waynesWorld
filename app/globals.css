@@ -7,6 +7,7 @@
   --foreground: #171717;
 }
 
+
 /* Map CSS vars into Tailwind tokens */
 @theme inline {
   --color-background: var(--background);
@@ -18,7 +19,7 @@
 /* Swap vars in dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -33,6 +34,18 @@
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   }
+
+  /* add near the other font vars */
+@theme inline {
+  --font-serif: var(--font-bodoni);   /* NEW display serif */
+}
+
+/* optional helper utility */
+@layer base {
+  .font-display {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+}
 
   /* Form controls: readable text + placeholder colors */
   input,
