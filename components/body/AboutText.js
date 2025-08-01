@@ -58,9 +58,15 @@ function AboutText() {
                 <div className='w-full md:w-2/3'>
                     <div className='flex flex-col gap-6 text-left'>
                         {/* MODIFIED: Made the large text responsive to prevent cramping on mobile */}
-                        <p className='text-3xl md:text-4xl font-serif text-gray-900'>Wayne Bowen is an artist who, since the eighties, has studied to capture life in the form of realism.</p>
+                        {/* <p className='text-3xl md:text-4xl font-serif text-gray-900'>Wayne Bowen is an artist who, since the eighties, has studied to capture life in the form of realism.</p>
                         <p className='text-lg text-gray-600 leading-relaxed'>Much of his work contrasts the stylistic and conceptual art forms of the eighties. His form of realism exemplifies itself in oils, watercolors, pen and ink, and pastels. While the artist appears to employ a basic academic approach, upon closer observation the colors and detail captivate and tell a story of their own. His colors are seductively light and soft, demanding attention and opinion. His meticulous approach to detail cannot be overlooked. It creates the backdrop for his life-like expressions.</p>
                        <p className='text-lg text-gray-600 leading-relaxed'>Mr. Bowen&apos;s work is backed by organizations such as The National Foundation for the Advancement in the Arts and the School of Visual Arts Alumni Society. Many investors consider his work uniquely collectible.</p>
+                         */}
+                    
+                        <p className='text-3xl md:text-4xl font-serif text-gray-900'>Wayne Bowen is an artist whose work is best described as contemporary realism in exhibiting compositions that execute inspiration drawn from the old masters. </p>
+                        <p className='text-lg text-gray-600 leading-relaxed'>Bowen&apos;s figurative composition series, which focuses on urban conditions, compels the viewers to engage with the subjects and the reality that has been purposely exposed. He works in a variety of mediums ranging from oils, acrylics, and watercolors, to pastels, charcoal, pen and ink. The artist&apos;s palate is earthly, seductively light and soft, which is visible in his still life paintings- commanding attention and opinions.</p>
+                       <p className='text-lg text-gray-600 leading-relaxed'>Backed by The National Foundation for Advancement in the Arts and the School of Visual Arts Alumni Society, Wayne Bowen has exhibited nationally, and his work is considered by many to be uniquely collectible.</p>
+                        
                     </div>
                 </div>
 

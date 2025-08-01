@@ -32,7 +32,7 @@ function ArtworkCard({ artwork, onClick }) {
         <p className="font-bold text-sm tracking-wide">{artwork.title}</p>
         <p className="text-xs">{artwork.type}</p>
         <p className="text-xs">{artwork.size && `Size: ${artwork.size}`}</p>
-        <p className="text-xs text-gray-500">{artwork.year}</p>
+        {/* <p className="text-xs text-gray-500">{artwork.year}</p> */}
       </div>
     </div>
   );
