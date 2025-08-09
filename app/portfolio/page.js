@@ -7,7 +7,7 @@ import ArtworkGrid from "@/components/body/ArtworkGrid";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const categories = ["Sceneries", "Scenarios", "Stills", "Sketches"];
+  const categories = ["Locations", "Urban Scenarios", "Still Life", "Portraits"];
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);

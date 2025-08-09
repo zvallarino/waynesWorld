@@ -65,7 +65,7 @@ function AboutText() {
                     
                         <p className='text-3xl md:text-4xl font-serif text-gray-900'>Wayne Bowen is an artist whose work is best described as contemporary realism in exhibiting compositions that execute inspiration drawn from the old masters. </p>
                         <p className='text-lg text-gray-600 leading-relaxed'>Bowen&apos;s figurative composition series, which focuses on urban conditions, compels the viewers to engage with the subjects and the reality that has been purposely exposed. He works in a variety of mediums ranging from oils, acrylics, and watercolors, to pastels, charcoal, pen and ink. The artist&apos;s palate is earthly, seductively light and soft, which is visible in his still life paintings- commanding attention and opinions.</p>
-                       <p className='text-lg text-gray-600 leading-relaxed'>Backed by The National Foundation for Advancement in the Arts and the School of Visual Arts Alumni Society, Wayne Bowen has exhibited nationally, and his work is considered by many to be uniquely collectible.</p>
+                       <p className='text-lg text-gray-600 leading-relaxed'>Wayne studied at the School of Visual Arts where he earned his BFA and later earned his MBA from Southern New Hampshire University. The artist is backed by The National Foundation for Advancement in the Arts and the School of Visual Arts Alumni Society. Wayne Bowen has exhibited nationally, and his work is considered uniquely collectible by many.</p>
                         
                     </div>
                 </div>
@@ -84,7 +84,7 @@ function AboutText() {
             </div>
             
             {/* --- Bottom Section: Lists --- */}
-            {/* MODIFIED: Reduced vertical padding on mobile */}
+            {/* MODIFIED: Reduced vertical padding on mobile
             <div className='flex flex-col md:flex-row w-full text-black py-12 md:py-20 gap-8 md:gap-16'>
                 <div className='w-full md:w-1/2 text-lg'>
                     {renderList("Studied With", studiedwith)}  
@@ -94,7 +94,7 @@ function AboutText() {
                     {renderList("Exhibits", exhibits)}
                     {renderList("Awards", awards)}
                 </div>
-            </div>
+            </div> */}
             
             {/* --- Currently Section --- */}
             <div className="w-full text-left">
