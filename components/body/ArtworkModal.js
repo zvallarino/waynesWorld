@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function ArtworkModal({ artwork, onClose }) {
   // Construct the image path
-  const imagePath = `/images/categories/${artwork.category}/${artwork.name}.jpg`;
+  const imagePath = `/images/categories/${artwork.category}/${artwork.name}.JPEG`;
 
   return (
     // FIXED: Replaced 'bg-black bg-opacity-80' with 'bg-black/80'

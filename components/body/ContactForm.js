@@ -42,7 +42,7 @@ function ContactForm() {
         className="object-cover -z-10 block md:hidden" 
       />
       <Image
-        src="/images/categories/stills2.jpg"
+        src="/images/categories/urban scenarios.JPEG"
         alt="Abstract background"
         fill
         className="object-cover -z-10 hidden md:block"

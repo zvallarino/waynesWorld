@@ -4,13 +4,13 @@ import Image from 'next/image';
 
 // It now accepts a prop, which is the function from the parent page
 function Categories({ onCategorySelect }) {
-  const listOfCategories = ["Sceneries", "Scenarios", "Stills", "Sketches"];
+  const listOfCategories = ["Locations", "Urban Scenarios", "Still Life", "Portraits"];
 
   return (
     <div className="flex w-full justify-center flex-wrap gap-8 p-10">
       {listOfCategories.map((category) => {
         // We can keep the image path logic
-        const imagePath = `/images/categories/${category.toLowerCase()}.jpg`;
+        const imagePath = `/images/categories/${category.toLowerCase()}.JPEG`;
 
         return (
           // MODIFIED: This is now a button or clickable div, not a Link

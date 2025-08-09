@@ -1,0 +1,303 @@
+[
+  {
+    "name": "niagara",        
+    "title": "Niagara Mist",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "30 x 48"
+  },
+  {
+    "name": "chavon",        
+    "title": "Chavon River",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "20 x 36"
+  },
+  {
+    "name": "sherwood",        
+    "title": "Sherwood Isalnd Park",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "30 x 40"
+  },
+  {
+    "name": "square",        
+    "title": "Stuyvesant Square",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "13 x 16"
+  },
+  {
+    "name": "hasting",        
+    "title": "Hasting Station",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "19 x 25"
+  },
+  {
+    "name": "ruins",        
+    "title": "Ruins in Morocco",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "22 x 26"
+  },
+  {
+    "name": "florida",        
+    "title": "Florida Palm",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "30 x 40"
+  },
+  {
+    "name": "calypso",        
+    "title": "Calypso",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "12 x 17"
+  },
+  {
+    "name": "dragon",        
+    "title": "Dragon Dance",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "14 x 15 "
+  },
+  {
+    "name": "glen",        
+    "title": "View from Glen Isalnd series #3",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "15 x 20"
+  },
+    {
+    "name": "bridge",        
+    "title": "Triborough Bridge",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "24 x 48"
+  },
+
+    {
+    "name": "eggs",        
+    "title": "Bread and Eggs",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "30 x 40"
+  },
+    {
+    "name": "wine",        
+    "title": "Wine and Apples",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "20 x 30"
+  },
+  {
+    "name": "life",        
+    "title": "Still Life",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "32 x 32"
+  },
+  {
+    "name": "sneakers",        
+    "title": "Old Sneakers",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "18 x 24"
+  },
+  {
+    "name": "red",        
+    "title": "Red Lantern",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "36 x 36"
+  },
+  {
+    "name": "gourds",        
+    "title": "Still Life with Gourds",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "30 x 40"
+  },
+  {
+    "name": "fruits",        
+    "title": "Fruits",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "24 x 30"
+  },
+  {
+    "name": "jacket",        
+    "title": "Jacket and Saddle",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "20 x 30"
+  },
+  {
+    "name": "fan",        
+    "title": "Fan and Chayote",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "26 x 32"
+  },
+  {
+    "name": "tools",        
+    "title": "Tools of the trade",
+    "type": "Oil on Masonite",
+    "category": "Still Life",
+    "size": "23 x 27"
+  },
+  {
+    "name": "window",        
+    "title": "By the Window",
+    "type": "Oil on Canvas",
+    "category": "Still Life",
+    "size": "12 x 16"
+  },
+
+  {
+    "name": "kosher",        
+    "title": "Kosher Meat Shop",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "11 x 14"
+  },
+    {
+    "name": "work",        
+    "title": "Men at Work",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "16 x 20"
+  },
+    {
+    "name": "unloading",        
+    "title": "After Unloading",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "16 x 20"
+  },
+    {
+    "name": "time",        
+    "title": "Passing Time",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "16 x 20"
+  },
+    {
+    "name": "waiting",        
+    "title": "Waiting on the Bus",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "20 x 30"
+  },
+    {
+    "name": "community",        
+    "title": "Community Stroll",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "16 x 20"
+  },
+    {
+    "name": "stoop",        
+    "title": "On The Stoop",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "20 x 30"
+  },
+    {
+    "name": "lunch",        
+    "title": "Lunch Break",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "16x20"
+  },
+    {
+    "name": "street",        
+    "title": "Life on the Street",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "20 x 30"
+  },
+    {
+    "name": "school",        
+    "title": "School Break",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "20 x 30"
+  },
+    {
+    "name": "boy",        
+    "title": "Boy With BasketBall",
+    "type": "Oil on Canvas",
+    "category": "Urban Scenarios",
+    "size": "32 x 50"
+  },
+
+  {
+    "name": "sarah",        
+    "title": "Sarah",
+    "type": "Oil on Canvas",
+    "category": "Portraits",
+    "size": "18 x 24"
+  },
+
+    {
+    "name": "self",        
+    "title": "Untitled",
+    "type": "Multimedia",
+    "category": "Portraits",
+    "size": "6 x 8"
+  },
+
+    {
+    "name": "smile",        
+    "title": "Smile",
+    "type": "Watercolor on Bristol",
+    "category": "Portraits",
+    "size": "6 x 8"
+  },
+    {
+    "name": "harlem",        
+    "title": "Harlem Street",
+    "type": "Oil on Masonite",
+    "category": "Portraits",
+    "size": "8 x 6"
+  },
+    {
+    "name": "grace",        
+    "title": "Grace",
+    "type": "Watercolor on Bristol",
+    "category": "Portraits",
+    "size": "10 x 10"
+  },
+   {
+    "name": "nubian",        
+    "title": "Nubian Guard",
+    "type": "Oil on Canvas",
+    "category": "Portraits",
+    "size": "24 x 26"
+  },
+   {
+    "name": "mine",        
+    "title": "Mine Face",
+    "type": "Oil on Canvas",
+    "category": "Portraits",
+    "size": "18 x 24"
+  },
+   {
+    "name": "hair",        
+    "title": "Bad Hair Day",
+    "type": "Oil on Canvas",
+    "category": "Portraits",
+    "size": "16 x 24"
+  },
+   {
+    "name": "locks",        
+    "title": "Man with Locks",
+    "type": "Oil on Canvas",
+    "category": "Portraits",
+    "size": "16 x 24"
+  }
+
+ 
+]

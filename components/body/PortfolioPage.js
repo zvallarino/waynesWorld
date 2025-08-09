@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from 'react';
-import artworks from '@/data/artwork.json';
+import artworks from '@/data/newart.json';
 import ArtworkCard from './ArtworkCard';
 import ArtworkModal from './ArtworkModal';
 
 function PortfolioPage({selectedCategory, setSelectedCategory}) {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
 
-  const categories = ["Sceneries", "Scenarios", "Stills", "Sketches"];
+  const categories = ["Locations", "Urban Scenarios", "Still Life", "Portraits"];
   const currentCategoryIndex = categories.indexOf(selectedCategory);
 
   const filteredArtworks = artworks.filter(

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function ArtworkCard({ artwork, onClick }) {
   // Construct the image path
-  const imagePath = `/images/categories/${artwork.category}/${artwork.name}.jpg`;
+  const imagePath = `/images/categories/${artwork.category}/${artwork.name}.JPEG`;
 
   return (
     <div 
@@ -19,6 +19,9 @@ function ArtworkCard({ artwork, onClick }) {
           // These values act as a maximum size; CSS will handle the final display size.
           width={800}
           height={1000}
+          onError={() =>
+            setSrc(`/images/categories/${artwork.category}/${artwork.name}.jpg`)
+          }
           sizes="(max-width: 768px) 100vw, 33vw"
           // CHANGED: 'fill' and 'object-cover' are removed.
           // ADDED: 'w-full' makes the image fill the column width.

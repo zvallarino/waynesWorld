@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import artworks from '@/data/artwork.json';
+import artworks from '@/data/newart.json';
 import ArtworkCard from './ArtworkCard';
 import ArtworkModal from './ArtworkModal';
 
