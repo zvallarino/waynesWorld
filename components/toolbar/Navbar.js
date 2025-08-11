@@ -4,10 +4,13 @@ import Link from 'next/link'
 function Navbar() {
   return (
     <nav
-      className="flex w-full flex-wrap items-center justify-center md:justify-evenly
-                  px-4 md:px-6 py-2 md:py-4
-                 gap-x-8 gap-y-2
-                 text-black text-lg sm:text-xl md:text-2xl xl:text-2xl"
+      className="
+        flex w-full flex-wrap items-center justify-center md:justify-evenly
+        px-4 md:px-6 py-2 md:py-4
+        gap-x-8 gap-y-2
+        text-black text-lg sm:text-xl md:text-2xl xl:text-4xl
+         rounded-lg
+      "
     >
       <Link href="/portfolio" className="hover:underline underline-offset-4">
         Portfolio
@@ -22,7 +25,7 @@ function Navbar() {
         Contact
       </Link>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

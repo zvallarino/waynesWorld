@@ -1,41 +1,47 @@
 // app/page.js
 "use client";
 
-import React, { useState } from 'react';
-import Categories from '@/components/body/Categories';
-import Homepage from '@/components/body/Homepage';
-import PortfolioPage from '@/components/body/PortfolioPage';
-import Toolbar from '@/components/toolbar/Toolbar';
+import React, { useState } from "react";
+import Categories from "@/components/body/Categories";
+import Homepage from "@/components/body/Homepage";
+import PortfolioPage from "@/components/body/PortfolioPage";
+import Toolbar from "@/components/toolbar/Toolbar";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // If a category is selected, show the filtered PortfolioPage view.
-  // We also pass the function to allow it to go back.
+  // ---- EASY TWEAKS ----
+  const UI = {
+    sideMarginPct: 5, // change this to adjust left/right breathing room
+  };
+  const sideMargin = `mx-[${UI.sideMarginPct}%]`;
+
+  const Shell = ({ children }) => (
+    <div className={`min-h-dvh w-full text-black screen-bg`}>
+      <header className={`border-b border-black/10 ${sideMargin}`}>
+        <div className="py-4 ">
+          <Toolbar />
+        </div>
+      </header>
+
+      <main className={`${sideMargin} py-6`}>{children}</main>
+    </div>
+  );
+
   if (selectedCategory) {
     return (
-      <div className="flex w-screen h-screen  flex-col px-[15%]">
-      <div className="flex h-1/6" >
-      <Toolbar />
-      </div>
-      <div className="flex  h-5/6" >   
-         <PortfolioPage 
-        selectedCategory={selectedCategory} 
-        setSelectedCategory = {setSelectedCategory}
-      />
-   </div>
-    </div>
+      <Shell>
+        <PortfolioPage
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+      </Shell>
     );
   }
 
-  // Otherwise, show the main gallery and the categories list below it.
-  // We pass the function to allow Categories to set the state.
   return (
-    <div className="flex w-screen h-screen  flex-col px-[15%]">
-      <div className="flex h-1/6" >
-      <Toolbar />
-      </div>
-      <div className="flex flex-col h-5/6" >     <Homepage setSelectedCategory ={setSelectedCategory} />
-    </div>
-    </div>
-  );}
+    <Shell>
+      <Homepage setSelectedCategory={setSelectedCategory} />
+    </Shell>
+  );
+}
