@@ -1,12 +1,58 @@
 /* globals.css */
 @import "tailwindcss";
 
-
 /* --- Theme variables (light defaults) --- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+/* ===========================
+   SCREEN BACKGROUND PALETTE
+   Edit these colors only
+   =========================== */
+:root {
+  --bg-mobile:  #ffffff; /* portrait/mobile */
+  --bg-sm:      #ffffff; /* ≥640px landscape  */
+  --bg-md:      #ffffff; /* ≥768px landscape  */
+  --bg-lg:      #ffffff; /* ≥1024px landscape */
+  --bg-xl:      #ffffff; /* ≥1280px landscape */
+  --bg-2xl:     #ffffff; /* ≥1536px landscape */
+
+  /* --bg-mobile:  #f6643b; 
+  --bg-sm:      #fca5a5; 
+  --bg-md:      #93c5fd; 
+  --bg-lg:      #1d4ed8;
+  --bg-xl:      #7c3aed;
+  --bg-2xl:     #00ffff; */
+}
+
+/* Apply this class to your page shell */
+.screen-bg { background-color: var(--bg-mobile) !important; }
+
+/* Portrait always = mobile color */
+@media (orientation: portrait) {
+  .screen-bg { background-color: var(--bg-mobile) !important; }
+}
+
+/* Landscape width tiers */
+@media (orientation: landscape) and (min-width: 640px)  { .screen-bg { background-color: var(--bg-sm)  !important; } }
+@media (orientation: landscape) and (min-width: 768px)  { .screen-bg { background-color: var(--bg-md)  !important; } }
+@media (orientation: landscape) and (min-width: 1024px) { .screen-bg { background-color: var(--bg-lg)  !important; } }
+@media (orientation: landscape) and (min-width: 1280px) { .screen-bg { background-color: var(--bg-xl)  !important; } }
+@media (orientation: landscape) and (min-width: 1536px) { .screen-bg { background-color: var(--bg-2xl) !important; } }
+
+/* --- Special cases (must come AFTER the general rules) --- */
+/* 2560 × 1440 (16:9) → treat as 2xl (green) */
+@media (orientation: landscape) and (min-width: 2560px) and (max-height: 1440px) {
+  .screen-bg { background-color: #22c55e !important; } /* green */
+}
+
+/* 2560 × 1600 (16:10) → treat as xl (violet) */
+@media (orientation: landscape) and (min-width: 2560px) and (min-height: 1600px) {
+  .screen-bg { background-color: #7c3aed !important; } /* violet */
+}
+
 
 
 /* Map CSS vars into Tailwind tokens */
@@ -25,6 +71,25 @@
     --foreground: #ededed;
   }
 }
+
+/* Base: laptops/desktops (landscape) = blue */
+/* .device-bg {
+  @apply bg-blue-700 dark:bg-blue-700;
+} */
+
+/* Phones/tablets held tall = yellow */
+/* @media (orientation: portrait) {
+  .device-bg {
+    @apply bg-yellow-600 dark:bg-yellow-600;
+  }
+} */
+
+/* Ultra-wide override (≥1536px) = green */
+/* @media (min-width: 1536px) {
+  .device-bg {
+    @apply bg-green-500 dark:bg-green-500;
+  }
+} */
 
 /* --- Base styles --- */
 @layer base {
