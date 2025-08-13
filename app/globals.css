@@ -45,12 +45,12 @@
 /* --- Special cases (must come AFTER the general rules) --- */
 /* 2560 × 1440 (16:9) → treat as 2xl (green) */
 @media (orientation: landscape) and (min-width: 2560px) and (max-height: 1440px) {
-  .screen-bg { background-color: #22c55e !important; } /* green */
+  .screen-bg { background-color: #ffffff !important; } /* green */
 }
 
 /* 2560 × 1600 (16:10) → treat as xl (violet) */
 @media (orientation: landscape) and (min-width: 2560px) and (min-height: 1600px) {
-  .screen-bg { background-color: #7c3aed !important; } /* violet */
+  .screen-bg { background-color: #ffffff !important; } /* violet */
 }
 
 
