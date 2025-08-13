@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom"; // Add this import
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import Navbar from "./Navbar";
@@ -16,19 +17,19 @@ const UI = {
   ],
 
   // Title sizes
- mobileTitleSize:  "text-[clamp(24px,8vw,40px)]",
+  mobileTitleSize:  "text-[clamp(24px,8vw,40px)]",
   desktopTitleSizes:"text-3xl sm:text-5xl md:text-6xl xl:text-7xl text-black",
   baseTitleClasses: "font-montserrat leading-tight font-semibold",
 
   // MOBILE OVERLAY ONLY
   overlayBgMobile: "bg-black",   // <- was a semi-transparent gradient
-overlayPadding:  "px-8",
-itemSize:  "text-4xl sm:text-5xl",
-itemGap:   "gap-8 sm:gap-10",
-itemStyleMobile: "text-white drop-shadow-lg",
-itemPillMobile:  "bg-white/5 hover:bg-white/10 active:bg-white/15 ring-1 ring-white/10 rounded-2xl",
+  overlayPadding:  "px-8",
+  itemSize:  "text-4xl sm:text-5xl",
+  itemGap:   "gap-8 sm:gap-10",
+  itemStyleMobile: "text-white drop-shadow-lg",
+  itemPillMobile:  "bg-white/5 hover:bg-white/10 active:bg-white/15 ring-1 ring-white/10 rounded-2xl",
 
-iconSize: 48,                               // X / burger size
+  iconSize: 48,                               // X / burger size
 };
 
 export default function Toolbar() {
@@ -113,44 +114,45 @@ export default function Toolbar() {
       </div>
 
       {/* Mobile FULL-SCREEN overlay */}
-      {isMobile && open && (
-  <div
-  className={`fixed inset-0 z-[100] isolate ${UI.overlayBgMobile} ${UI.overlayPadding} flex`}
-    role="dialog"
-    aria-modal="true"
-    style={{
-      paddingTop: "max(16px, env(safe-area-inset-top))",
-      paddingBottom: "max(16px, env(safe-area-inset-bottom))",
-      paddingLeft: "max(16px, env(safe-area-inset-left))",
-      paddingRight:"max(16px, env(safe-area-inset-right))",
-    }}
-    onClick={() => setOpen(false)}
-  >
-    <button
-      aria-label="Close menu"
-      className="absolute right-4 top-4 p-3 text-white"
-      onClick={(e) => { e.stopPropagation(); setOpen(false); }}
-    >
-      <FiX size={UI.iconSize} />
-    </button>
-
-    <nav
-      className={`relative mx-auto my-auto w-full flex flex-col items-center ${UI.itemGap}`}
-      onClick={(e) => e.stopPropagation()}
-    >
-      {UI.items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className={`w-full max-w-sm text-center ${UI.itemSize} ${UI.itemStyleMobile} ${UI.itemPillMobile} py-4`}
+      {isMobile && open && mounted && createPortal( // Wrap in createPortal and check mounted
+        <div
+          className={`fixed inset-0 z-[100] isolate ${UI.overlayBgMobile} ${UI.overlayPadding} flex`}
+          role="dialog"
+          aria-modal="true"
+          style={{
+            paddingTop: "max(16px, env(safe-area-inset-top))",
+            paddingBottom: "max(16px, env(safe-area-inset-bottom))",
+            paddingLeft: "max(16px, env(safe-area-inset-left))",
+            paddingRight: "max(16px, env(safe-area-inset-right))",
+          }}
           onClick={() => setOpen(false)}
         >
-          {item.label}
-        </Link>
-      ))}
-    </nav>
-  </div>
-)}
+          <button
+            aria-label="Close menu"
+            className="absolute right-4 top-4 p-3 text-white"
+            onClick={(e) => { e.stopPropagation(); setOpen(false); }}
+          >
+            <FiX size={UI.iconSize} />
+          </button>
+
+          <nav
+            className={`relative mx-auto my-auto w-full flex flex-col items-center ${UI.itemGap}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {UI.items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`w-full max-w-sm text-center ${UI.itemSize} ${UI.itemStyleMobile} ${UI.itemPillMobile} py-4`}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>,
+        document.body // Portal to body to avoid stacking context issues
+      )}
     </div>
   );
 }
