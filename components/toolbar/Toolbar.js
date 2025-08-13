@@ -16,7 +16,7 @@ const UI = {
   ],
 
   // Title sizes
-  mobileTitleSize:  "text-5xl ml-8",
+  mobileTitleSize:  "text-[clamp(24px,8vw,40px)]",
   desktopTitleSizes:"text-3xl sm:text-5xl md:text-6xl xl:text-7xl text-black",
   baseTitleClasses: "font-montserrat leading-tight font-semibold",
 
