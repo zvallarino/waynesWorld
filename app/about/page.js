@@ -1,14 +1,13 @@
-import AboutText from "@/components/body/AboutText";
+"use client";
 
-import Toolbar from "@/components/toolbar/Toolbar";
+import React from "react";
+import Shell from "@/components/layout/Shell";
+import AboutText from "@/components/body/AboutText";
 
 export default function About() {
   return (
-    <div className="flex w-full h-screen  flex-col px-[15%]">
-      <div className="flex h-1/6" >
-      <Toolbar />
-      </div>
-      <div className="flex  h-5/6" ><AboutText /></div>
-    </div>
-  )
+    <Shell sideMarginPct={5}>
+      <AboutText />
+    </Shell>
+  );
 }
