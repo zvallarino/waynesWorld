@@ -17,11 +17,12 @@ export default function Home() {
   const sideMargin = `mx-[${UI.sideMarginPct}%]`;
 
   const Shell = ({ children }) => (
-      <div className="flex w-screen h-screen  flex-col px-[15%]">
-          <div className="flex h-1/6" >
+    <div className={`min-h-dvh w-full text-black screen-bg`}>
+      <header className={`border-b border-black/10 ${sideMargin}`}>
+        <div className="py-4 px-20 ">
           <Toolbar />
-          </div>
-    
+        </div>
+      </header>
 
       <main className={`${sideMargin} py-6`}>{children}</main>
     </div>
