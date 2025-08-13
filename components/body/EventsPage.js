@@ -1,64 +1,16 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 
 function EventsPage() {
-  // Unified data model: startDate + (optional) endDate
-  const events = [
-    // Ongoing / Upcoming (2)
-    {
-      startDate: '2025-10-02',
-      endDate: '2025-10-28', // range (Uostream Gallery)
-      location: 'Uostream Gallery',
-      time: '', // optional
-      title: 'A Touch of Realism',
-      description: 'Hastings on the Hudson, New York, NY',
-    },
-    {
-      startDate: '2025-09-10',
-      // endDate omitted => open-ended; treated as ongoing once startDate <= today
-      location: 'The Fine Arts Gallery in Bronxville',
-      time: '4:00 PM',
-      title: '', // if empty, we’ll fall back to location
-      description: 'Currently on display.',
-    },
+  const [events, setEvents] = useState([]);
 
-    // Past Events (4) — single-day events: start = end
-    {
-      startDate: '2025-07-15',
-      endDate: '2025-07-15',
-      location: 'Boston, MA',
-      time: '7:00 PM',
-      title: '',
-      description:
-        'A special charity auction and gala where several exclusive prints were sold to support local arts education programs for underprivileged youth.',
-    },
-    {
-      startDate: '2024-12-05',
-      endDate: '2024-12-05',
-      location: 'Los Angeles, CA',
-      time: '6:00 PM',
-      title: '',
-      description:
-        'An intimate evening artist talk discussing the inspiration behind the "Urban Dreams" series, followed by a live painting session for all attendees.',
-    },
-    {
-      startDate: '2024-09-22',
-      endDate: '2024-09-22',
-      location: 'Virtual Event',
-      time: '3:00 PM',
-      title: '',
-      description:
-        'A live-streamed studio tour that gave viewers a behind-the-scenes look at the artistic process, current works-in-progress, and favorite tools.',
-    },
-    {
-      startDate: '2023-11-11',
-      endDate: '2023-11-11',
-      location: 'Miami, FL',
-      time: '1:00 PM',
-      title: '',
-      description:
-        "A comprehensive retrospective exhibition that showcased a curated selection of significant works spanning the last decade of the artist's career.",
-    },
-  ];
+
+  useEffect(() => {
+    fetch('/api/events')
+      .then((res) => res.json())
+      .then((data) => setEvents(data))
+      .catch((err) => console.error('Error fetching events:', err));
+  }, []);
 
   // ---- Helpers ----
   const toMidnight = (d) => {
