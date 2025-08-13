@@ -16,7 +16,7 @@ const UI = {
   ],
 
   // Edit these two only:
-  mobileTitleSize:  "text-7xl ml-8",                          // <-- mobile portrait size (make it “twice as big” here)
+  mobileTitleSize:  "text-5xl ml-8",                          // <-- mobile portrait size (make it “twice as big” here)
   desktopTitleSizes:"text-3xl sm:text-5xl md:text-6xl xl:text-7xl text-black", // desktop/landscape sizes
   baseTitleClasses: "font-montserrat leading-tight font-semibold",
 };
@@ -81,7 +81,7 @@ export default function Toolbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen(v => !v)}
           >
-            {open ? <FiX size={128} /> : <FiMenu size={128} />}
+            {open ? <FiX size={64} /> : <FiMenu size={64} />}
           </button>
         )}
       </div>
