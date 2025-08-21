@@ -1,27 +1,42 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 
-// This component receives the list of categories and a function to call when one is selected.
-export default function CategoryChooser({ categories, onCategorySelect }) {
+export default function CategoryChooser({
+  categories = [],
+  onCategorySelect = () => {},
+  headerHeight = 0, // pass your toolbar height in px (e.g., 64)
+}) {
   return (
     <div
+      // 80% of the dynamic viewport height; subtract header if provided
+      style={{
+        "--hero-h": "80dvh",
+        "--header-h": `${headerHeight}px`,
+      }}
       className={`
-        flex h-full flex-col items-center justify-center bg-cover bg-center 
+        relative overflow-hidden
+        flex flex-col items-center justify-center
         text-white text-center p-8 transition-all duration-300
-        bg-[url('/images/categories/Sceneries/oceanwaves.jpg')] 
+        bg-cover bg-center
+        bg-[url('/images/categories/Sceneries/oceanwaves.jpg')]
         md:bg-[url('/images/categories/Scenarios/shoesstore.jpg')]
+
+        /* responsive min-heights */
+        min-h-[calc(var(--hero-h)-var(--header-h))]
+        sm:min-h-[70svh]        /* a bit shorter on small phones */
+        lg:min-h-[calc(80dvh-var(--header-h))] /* ensure ~20% shorter on large screens */
       `}
     >
-      {/* This div adds a semi-transparent overlay to make the text more readable */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0" />
-      
-      {/* Content container with responsive gaps and text */}
+      {/* overlay */}
+      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+
+      {/* content */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-12 md:gap-16">
         {categories.map((category) => (
           <h1
             key={category}
-            className="text-5xl sm:text-6xl md:text-8xl font-serif font-thin tracking-wider cursor-pointer hover:text-red-500 transition-colors duration-300"
+            className="text-2xl sm:text-4xl md:text-6xl font-serif font-thin tracking-wider cursor-pointer hover:text-red-500 transition-colors duration-300"
             onClick={() => onCategorySelect(category)}
           >
             {category}

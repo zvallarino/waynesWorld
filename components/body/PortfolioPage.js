@@ -49,7 +49,7 @@ function PortfolioPage({selectedCategory, setSelectedCategory}) {
           {selectedCategory}
         </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArtworks.map((artwork) => (
             <ArtworkCard 
               key={artwork.name} 
