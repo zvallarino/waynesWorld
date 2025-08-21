@@ -77,6 +77,14 @@
     "size": "24 x 48"
   },
 
+   {
+    "name": "subway",        
+    "title": "Subway Station (Broadway & 215th Street)",
+    "type": "Oil on Canvas",
+    "category": "Locations",
+    "size": "16 x 28"
+  },
+
     {
     "name": "eggs",        
     "title": "Bread and Eggs",
@@ -279,7 +287,7 @@
   },
    {
     "name": "mine",        
-    "title": "Mine Face",
+    "title": "Mime Face",
     "type": "Oil on Canvas",
     "category": "Portraits",
     "size": "18 x 24"
