@@ -20,19 +20,28 @@ export default async function handler(req, res) {
     await auth.getClient();
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const range = 'Sheet1!A2:F'; // skip header row
+    const range = 'Sheet1!A2:G'; // skip header row
 
     const { data } = await sheets.spreadsheets.values.get({ spreadsheetId, range });
     const rows = data.values || [];
 
-    const events = rows.map((row) => ({
-      startDate: row[0] || '',
-      endDate: row[1] || '',
-      location: row[2] || '',
-      time: row[3] || '',
-      title: row[4] || '',
-      description: row[5] || '',
-    }));
+const events = rows.map((row) => {
+  const raw = row[6] || '';
+  let link = raw;
+  let linkText = raw;
+  const m = /^=HYPERLINK\("([^"]+)"\s*,\s*"([^"]+)"\)$/i.exec(raw);
+  if (m) { link = m[1]; linkText = m[2]; }
+  return {
+    startDate: row[0] || '',
+    endDate: row[1] || '',
+    location: row[2] || '',
+    time: row[3] || '',
+    title: row[4] || '',
+    description: row[5] || '',
+    link,
+    linkText,
+  };
+});
 
     return res.status(200).json(events);
   } catch (err) {

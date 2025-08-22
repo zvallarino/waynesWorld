@@ -1,3 +1,5 @@
+// /home/zvallarino/code/wayne/waynesWorld/components/body/EventsPage.js
+
 "use client"
 import React, { useEffect, useState } from 'react';
 
@@ -21,7 +23,15 @@ function EventsPage() {
 
   const today = toMidnight(new Date());
 
-  const parse = (iso) => (iso ? toMidnight(new Date(iso)) : null);
+  // const parse = (iso) => (iso ? toMidnight(new Date(iso)) : null);
+  const parse = (iso) => {
+    if (!iso) return null;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+    const [y, m, d] = iso.split('-').map(Number);
+    return new Date(y, m - 1, d); // local midnight
+    }
+    return toMidnight(new Date(iso));
+    };
 
   const formatDate = (date) =>
     date?.toLocaleDateString(undefined, {
@@ -71,6 +81,21 @@ function EventsPage() {
   // Combine ongoing first, then upcoming
   const eventsToShow = [...ongoingEvents, ...upcomingEvents];
 
+    // ---- Helpers ----
+ const toHref = (s) => {
+   if (!s) return null;
+   try {
+    // Works if the cell already has http(s) or mailto: etc.
+     return new URL(s).href;
+   } catch {
+     // Add https:// if the user typed a bare domain (e.g. example.com)
+     if (/^[\w.-]+\.[a-z]{2,}([/?#].*)?$/i.test(s)) {
+       return `https://${s}`;
+    }
+    return null; // don’t render unsafe/unknown protocols
+  }
+ };
+
   // ---- UI ----
   const EventCard = ({ ev }) => {
     const range = formatRange(ev.startDate, ev.endDate ?? ev.startDate);
@@ -84,6 +109,19 @@ function EventsPage() {
         <div className="font-semibold text-gray-900">{title}</div>
         <div className="italic text-sm text-gray-600">{ev.location}</div>
         {ev.description ? <p className="mt-2 text-gray-800">{ev.description}</p> : null}
+        {/* {ev.link ? <p className="mt-2 text-gray-800">{ev.link}</p> : null} */}
+               {toHref(ev.link) ? (
+        <a
+          href={toHref(ev.link)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-flex items-center gap-1 text-blue-600 hover:underline break-all"
+          aria-label={`Open link for ${title}`}         >
+          {ev.link}
+          <span aria-hidden>↗</span>
+        </a>
+      ) : null}
+
       </div>
     );
   };

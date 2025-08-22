@@ -28,18 +28,18 @@ const tenorSans = Tenor_Sans({
 
 export const metadata = {
   title: "Wayne Bowen Art",
-  description: "Created by Zach Vallarino",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fca5a5" },
-    { media: "(min-width: 1024px)", color: "#ffffff" },
-    { media: "(min-width: 1536px)", color: "#ffffff" },
-  ],
+  description: "Created by Zach Vallarino"
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover", // <-- important for env(safe-area-inset-*)
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(min-width: 1024px)", color: "#ffffff" },
+    { media: "(min-width: 1536px)", color: "#ffffff" },
+  ], // <-- important for env(safe-area-inset-*)
 };
 
 export default function RootLayout({ children }) {
