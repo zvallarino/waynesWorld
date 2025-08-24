@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "googleapis": "^155.0.1",
     "next": "15.3.5",
     "postcss": "^8.5.6",
