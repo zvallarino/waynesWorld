@@ -32,6 +32,7 @@ export default function ContactForm2() {
     lastName: "",
     email: "",
     message: "",
+    newsletter: false,
   });
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -43,8 +44,13 @@ export default function ContactForm2() {
     }
   }, []);
 
-  const handleChange = (e) =>
-    setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((p) => ({ 
+      ...p, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
+  };
 
   const renderLabel = (label) => (
     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -58,6 +64,35 @@ export default function ContactForm2() {
     setSubmitting(true);
 
     try {
+      // Handle newsletter signup first if checked
+      if (formData.newsletter) {
+        try {
+          const response = await fetch('/api/newsletter', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              firstName: formData.firstName,
+              lastName: formData.lastName,
+              email: formData.email,
+              message: formData.message,
+            }),
+          });
+
+          const data = await response.json();
+          
+          if (data.success && !data.duplicate) {
+            console.log('Newsletter signup successful');
+          } else if (data.duplicate) {
+            console.log('Email already subscribed');
+          }
+        } catch (error) {
+          console.error('Newsletter signup error:', error);
+          // Don't block the main form submission if newsletter fails
+        }
+      }
+
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
       let msg = formData.message || "";
       if (msg.length > 1800) msg = msg.slice(0, 1800) + "\n\n[Message truncated]";
@@ -69,6 +104,7 @@ export default function ContactForm2() {
         last_name: formData.lastName,
         email: formData.email, // used for Reply-To in the template
         message: msg,
+        newsletter: formData.newsletter ? "Yes" : "No",
         site_name: SITE_NAME,
         time: new Date().toLocaleString(),
         // If you set the template BCC to {{bcc}}, you can enable this:
@@ -94,14 +130,14 @@ export default function ContactForm2() {
         setNotice(
           "Thank you for contacting Wayne Bowen Art. We will reach out to you shortly."
         );
-        setFormData({ firstName: "", lastName: "", email: "", message: "" });
+        setFormData({ firstName: "", lastName: "", email: "", message: "", newsletter: false });
       } else {
         throw new Error("EmailJS returned a non-200 status.");
       }
     } catch (err) {
       console.error(err);
       setNotice(
-        "We couldn’t send via EmailJS. You can try again or contact us directly below."
+        "We couldn't send via EmailJS. You can try again or contact us directly below."
       );
     } finally {
       setSubmitting(false);
@@ -220,6 +256,21 @@ export default function ContactForm2() {
                     className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"
                     required
                   />
+                </div>
+
+                {/* Newsletter Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    id="newsletter"
+                    name="newsletter"
+                    type="checkbox"
+                    checked={formData.newsletter}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-gray-800 focus:ring-2 focus:ring-gray-800"
+                  />
+                  <label htmlFor="newsletter" className="text-m text-gray-700 cursor-pointer">
+                    Sign up for the newsletter to receive updates on Wayne Bowen's work
+                  </label>
                 </div>
 
                 <button
