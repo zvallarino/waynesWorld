@@ -269,7 +269,7 @@ export default function ContactForm2() {
                     className="mt-1 h-4 w-4 rounded border-gray-300 text-gray-800 focus:ring-2 focus:ring-gray-800"
                   />
                   <label htmlFor="newsletter" className="text-m text-gray-700 cursor-pointer">
-                    Sign up for the newsletter to receive updates on Wayne Bowen's work
+                    Sign up for the newsletter to receive updates on Wayne Bowen&apos;s work
                   </label>
                 </div>
 
