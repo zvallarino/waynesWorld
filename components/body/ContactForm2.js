@@ -45,11 +45,9 @@ export default function ContactForm2() {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((p) => ({ 
-      ...p, 
-      [name]: type === 'checkbox' ? checked : value 
-    }));
+    const { name, type } = e.target;
+    const value = type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData((p) => ({ ...p, [name]: value }));
   };
 
   const renderLabel = (label) => (
@@ -180,7 +178,7 @@ export default function ContactForm2() {
             style={{ maxWidth: UI.cardMaxW, minHeight: UI.cardMinH }}
           >
             <div className="p-6 md:p-8">
-              <h2 className="text-5xl md:text-6xl font-thin tracking-tight mb-6 text-center text-black">
+              <h2 className="text-5xl md:text-6xl font-thin tracking-tight mb-6 text-center text-gray-800">
                 Contact
               </h2>
 
@@ -214,7 +212,7 @@ export default function ContactForm2() {
                       type="text"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"
+                      className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition text-gray-800"
                       required
                     />
                   </div>
@@ -226,7 +224,7 @@ export default function ContactForm2() {
                       type="text"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"
+                      className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition text-gray-800"
                       required
                     />
                   </div>
@@ -240,7 +238,7 @@ export default function ContactForm2() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"
+                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition text-gray-800"
                     required
                   />
                 </div>
@@ -253,7 +251,7 @@ export default function ContactForm2() {
                     rows="4"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition"
+                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-800 focus:outline-none transition text-gray-800"
                     required
                   />
                 </div>
@@ -268,8 +266,8 @@ export default function ContactForm2() {
                     onChange={handleChange}
                     className="mt-1 h-4 w-4 rounded border-gray-300 text-gray-800 focus:ring-2 focus:ring-gray-800"
                   />
-                  <label htmlFor="newsletter" className="text-m text-gray-700 cursor-pointer">
-                    Sign up for the newsletter to receive updates on Wayne Bowen&apos;s work
+                  <label htmlFor="newsletter" className="text-sm text-gray-700 cursor-pointer">
+                    Sign me up for the newsletter to receive updates and news
                   </label>
                 </div>
 
